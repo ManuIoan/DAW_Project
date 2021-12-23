@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+    border: 0px;
+    margin: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    
+    align-items: center;
+    width: auto;
+    height: 700px;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 1px;
+  
+
+}
+img{
+    height: 100%;
+}
+.login{
+    
+    height: 100%;
+    width: 500px;
+}
+.sketchy {
+    padding: 4rem 8rem;
+    display: inline-block;
+    border: 3px solid #333333;
+    font-size: 2.5rem;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    text-transform: uppercase;
+    letter-spacing: 0.3ch;
+    background: #ffffff;
+    position: relative;
+    
+}
+
+.sketchy::before {
+    content: '';
+    border: 2px solid #353535;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+    border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+}
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.login p{
+    font-size: 2.5rem;
+    color: #353535;
+}
+.f1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+::placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+  input{
+      
+      border-bottom: 1px solid #353535;
+      outline: none;
+      font-size: 2rem;
+  }
+  .tex{
+    width: 350px;
+    margin-top: 30px;
+    height: 2.5rem;
+  }
+  .reg{
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+  a{
+      text-decoration: none;
+      color: #353535;
+  }
+  .fp{
+      
+      width: 350px;
+      margin-top: 10px;
+  }
