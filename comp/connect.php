@@ -4,7 +4,7 @@ $username = "root";
 $password = "";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password, "job_hunter");
 
 // Check connection
 if ($conn->connect_error) {

@@ -4,7 +4,7 @@
     margin: 0px;
     font-family: 'Poppins', sans-serif;
 }
-body{
+.sarc{
     width: 100%;
     height: 100vh;
     display: flex;
@@ -31,31 +31,7 @@ img{
     height: 100%;
     width: 500px;
 }
-.sketchy {
-    padding: 4rem 8rem;
-    display: inline-block;
-    border: 3px solid #333333;
-    font-size: 2.5rem;
-    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
-    text-transform: uppercase;
-    letter-spacing: 0.3ch;
-    background: #ffffff;
-    position: relative;
-    
-}
 
-.sketchy::before {
-    content: '';
-    border: 2px solid #353535;
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
-    border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
-}
 .login{
     display: flex;
     justify-content: center;
@@ -106,3 +82,90 @@ img{
       width: 350px;
       margin-top: 10px;
   }
+  .container2{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    width: auto;
+    height: 300px;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 1px;
+  
+
+}
+textarea {
+    resize: none;
+    outline: none;
+    border: 1px solid grey;
+    width: 300px;
+    height: 150px;
+  }
+  .ma{
+      width: 500px;
+      height: 500px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 3px;
+      
+      
+  }
+  .chm{
+    display: flex;
+    
+    
+  }
+  .pd1{
+      
+      width: 250px;
+      height: 50px;
+      background-color: antiquewhite;
+      padding: 0px;
+      margin: 0px;
+      border: 0px;
+      color: white;
+  }
+  .profile{
+      background-color: white;
+      color: black;
+      
+      border-bottom: 0px;
+      
+  }
+  .descopera{
+      color: black;
+  }
+  .scrrc
+  {
+      width: 100%;
+      height:100%;
+      padding: 20px;
+      border-top: 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+ 
+  .scrrc img{
+      width:200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-top: 20px;
+  }
+
+.udos{
+    display: flex;
+}
+.tot{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    
+}
+.despre{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    margin-top: 20px;
+    
+}

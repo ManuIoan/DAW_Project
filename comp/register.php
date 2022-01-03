@@ -1,49 +1,44 @@
-
 <?php
-require 'antet.php';
-require 'connect.php';
+session_start();
+include_once "antet.php";
+if(isset($_SESSION["unique_id"]))
+header("Location: main.php");
 ?>
-<body>
-    <div class="container" class="sketchy">
-        
-        <div class="login">
-            <p>REGISTER your account</p>
-            <form action="" class="f1">
-            <input type="text" placeholder="email" class="tex" required>
-            <input type="text" placeholder="username" class="tex" required>
-            <input type="text" placeholder="password" class="tex" required>
-            <input type="text" placeholder="password again" class="tex" required>
-
-            <div class="choose">
+<body class="sarc">
+<div class="container2" >
+   <form action="" method="post">
+     <label for="">  
+  Sunteti un angajator sau un angajat?
+     </label>
+     <div class="choose">
             <div class="fp" >
-                <input type="checkbox" name="check" onclick="onlyOne(this)">
+                <input type="checkbox" id="check" name="check" onclick="onlyOne(this)" value="1">
                 <label for="">Companie</label>
             </div>
             <div class="fp " >
-                <input type="checkbox" name="check" onclick="onlyOne(this)">
+                <input type="checkbox" id="check" name="check" onclick="onlyOne(this)" value="0">
                 <label for="">User</label>
             </div>
             </div>
 
-            <button type="submit" class="tex">
+            <button type="submit" class="tex" name="submit2">
                 Register
             </button>
 
-            </form>
-            <div class="reg">
-            <h5>Nu ai cont?</h5>
-            <a href="login.php">Conecteaza-te</a>
-            </div>
             
-            
-        </div>
-        <img src="../images/log.jpg" alt="">
-    </div>
-    <?php
-    ?>
-
-
+   </form>
+</div>
 </body>
 <?php
-require 'sub.php';
+include_once "sub.php";
+
+if(isset($_POST['submit2'])&& isset($_POST['check']))
+{
+    $check = $_POST['check'];
+    $_SESSION["check"] = $check;
+    if($check=="0")
+    header("Location: register1.php");
+    else
+    header("Location: register2.php");
+}
 ?>
