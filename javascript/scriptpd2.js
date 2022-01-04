@@ -1,6 +1,6 @@
 let prof = document.querySelector('.profile');
 let dsc = document.querySelector('.descopera');
-let scr = document.querySelector('.scrrc');
+let scr = document.querySelector('.musk');
 
  
  
@@ -10,25 +10,28 @@ let scr = document.querySelector('.scrrc');
     dsc.style.backgroundColor="antiquewhite";
   
 
-      let xhr = new XMLHttpRequest();
-      //creating XML object
-      xhr.open("POST", "getuser.php", true);
-      xhr.onload = ()=>{
-         if(xhr.readyState === XMLHttpRequest.DONE)
-         {
-             if(xhr.status === 200){
-                 let data = xhr.response;
-                 scr.innerHTML = data;
+//     let xhr = new XMLHttpRequest();
+//       //creating XML object
+//       xhr.open("POST", "getco.php", true);
+//       xhr.onload = ()=>{
+//          if(xhr.readyState === XMLHttpRequest.DONE)
+//          {
+//              if(xhr.status === 200){
+//                  let data = xhr.response;
+//                  scr.innerHTML = data;
                  
                  
                  
-             }
-         }
+//              }
+//          }
+//       }
+  
+//    console.log(str);
+//       xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//       xhr.send("i="+str);
+
       }
   
-   console.log(str);
-      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhr.send("i="+str);
 
 
 
@@ -64,7 +67,7 @@ let scr = document.querySelector('.scrrc');
       
 
 // </div>`
- }
+ 
 
 
  const desc = () =>{

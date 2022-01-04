@@ -169,3 +169,25 @@ textarea {
     margin-top: 20px;
     
 }
+.adaugare{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    width: 500px;
+    height: 800px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 3px;
+}
+.adg{
+    margin-top: 50px;
+    font-size: 2rem;
+}
+.musk{
+    width: 100%;
+    height:100%;
+    
+    border-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

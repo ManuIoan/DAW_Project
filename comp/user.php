@@ -38,7 +38,9 @@ if($row['este']!=NULL)
  
  ?>
     </p>
-    <p>Cauti de lucru in :
+    <div class="tot">
+       <div class="despre">
+           <p>
         <?php
         $cec= $row['este'];
         
@@ -50,15 +52,34 @@ if($row['este']!=NULL)
         
         ?>
     </p>
-    <p>Descrierea ta este: 
+    <p>
         <?php
          echo $row2['description'];
         ?>
     </p>
-
+    </div>
+    <form method="post">
+  <input type="submit" name="submit22" value="Change"/>
+    </form>
+</div>
       
 
 </div>
+<?php
+
+if(isset($_POST['submit22']))
+{
+    $sql5 = mysqli_query($conn,"UPDATE  users SET este = NULL WHERE random_id = '{$_SESSION["unique_id"]}'");
+    $sql6 = mysqli_query($conn,"DELETE FROM  $cec  WHERE random_id = '{$_SESSION["unique_id"]}'");
+if($sql5)
+    {
+        header("Refresh:0");
+    }
+    else
+    printf("Connect failed: %s\n", mysqli_error($conn));
+}
+
+?>
 <script src="../javascript/scriptpd.js"></script>
 
 
@@ -117,8 +138,8 @@ if($sql5)
 
 
 
-$sql2 = mysqli_query($conn, "INSERT INTO $chs (random_id, description)
-                VALUES ('{$_SESSION["unique_id"]}', '{$dscr}')");
+$sql2 = mysqli_query($conn, "INSERT INTO $chs (random_id, description,c_u)
+                VALUES ('{$_SESSION["unique_id"]}', '{$dscr}', 0)");
     if($sql2)
     {
         header("Location: user.php");

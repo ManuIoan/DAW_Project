@@ -22,7 +22,7 @@ $output.='<img src="../images/pht.jpg" alt="">
     <p>'.$row2['wut'].'</p>
     <p>'.$row2['description'].'</p>
   </div>
-  <button type="button">
+  <button type="button" name="submit22">
     Change
   </button>
 </div>
