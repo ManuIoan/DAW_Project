@@ -38,7 +38,25 @@ header("Location: register.php");
        if($sql21)
        {
         while($row21 = mysqli_fetch_assoc($sql21)){
-            echo $row21['este'];
+            $cec2= $row21['este'];
+            $sql31 = mysqli_query($conn, "SELECT * from $cec2 WHERE random_id = '{$_SESSION["unique_id"]}' ");
+            if($sql31)
+            {
+                $output="";
+                while($row31 = mysqli_fetch_assoc($sql31))
+                $output.=
+                 '<div class="despre">
+                 <p>'.$row31['wut'].'</p>
+                 <p>'.$row31['description'].'</p>
+               </div>
+               <button type="button" name="submit22">
+                 Change
+               </button>
+               ';
+               echo $output;
+            }
+            else
+            printf("Connect failed: %s\n", mysqli_error($conn));
         }
 
        }
