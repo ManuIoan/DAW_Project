@@ -1,0 +1,5 @@
+SELECT wd.random_id, student.done
+FROM student
+LEFT JOIN wd
+ON wd.random_id=student.random_id
+WHERE wd.c_u =1;

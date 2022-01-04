@@ -136,16 +136,24 @@ if($sql5)
     else
     printf("Connect failed: %s\n", mysqli_error($conn));
 
+$name= "u".$_SESSION["unique_id"];
+$sql66=mysqli_query($conn,"CREATE TABLE $name(id int(10) NOT NULL AUTO_INCREMENT, done int(10), id_job int(100) )");
+if($sql66)
+{
+ echo "ceuau";
+}
+else
+printf("Connect failed: %s\n", mysqli_error($conn));
 
 
-$sql2 = mysqli_query($conn, "INSERT INTO $chs (random_id, description,c_u)
-                VALUES ('{$_SESSION["unique_id"]}', '{$dscr}', 0)");
-    if($sql2)
-    {
-        header("Location: user.php");
-    }
-    else
-    printf("Connect failed: %s\n", mysqli_error($conn));
+// $sql2 = mysqli_query($conn, "INSERT INTO $chs (random_id, description,c_u)
+//                 VALUES ('{$_SESSION["unique_id"]}', '{$dscr}', 0)");
+//     if($sql2)
+//     {
+//         header("Location: user.php");
+//     }
+//     else
+//     printf("Connect failed: %s\n", mysqli_error($conn));
 
 
 
