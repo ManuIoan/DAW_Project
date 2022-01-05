@@ -121,18 +121,36 @@ textarea {
       padding: 0px;
       margin: 0px;
       border: 0px;
-      color: white;
+      
+      color: black;
   }
   .profile{
       background-color: white;
       color: black;
       
-      border-bottom: 0px;
+     
       
   }
   .descopera{
       color: black;
   }
+  .profile2{
+    background-color: none;
+    margin: 20px;
+    border: 0px;
+    background-color: #fff;
+    padding: 20px;
+   
+    
+}
+.descopera2{
+    background-color: none;
+    margin: 20px;
+      padding: 20px;
+      border: 0px;
+      background-color: #fff;
+}
+  
   .scrrc
   {
       width: 100%;
@@ -191,3 +209,20 @@ textarea {
     flex-direction: column;
     align-items: center;
 }
+.bi-suit-heart-fill:hover{
+    fill: red;
+}
+.glyphicon{
+    width:40px;
+    height:40px;
+    font-size: 40px;
+    color:rgb(221, 176, 116);
+}
+.glyphicon-thumbs-up:hover{
+    color: green;
+    
+}
+.glyphicon-thumbs-down:hover{
+    color: red;
+}
+

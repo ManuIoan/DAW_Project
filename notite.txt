@@ -3,3 +3,17 @@ FROM student
 LEFT JOIN wd
 ON wd.random_id=student.random_id
 WHERE wd.c_u =1;
+
+
+
+
+
+SELECT distinct wd.id_wd, u1577406351.done
+FROM wd
+LEFT JOIN u1577406351
+ON wd.id_wd=u1577406351.id_job
+WHERE wd.c_u =1;
+
+
+
+u1577406351
