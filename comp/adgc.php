@@ -56,10 +56,40 @@ if($sql5)
     else
     printf("Connect failed: %s\n", mysqli_error($conn));
 
+    
 
 
-$sql2 = mysqli_query($conn, "INSERT INTO $chs (random_id, description, c_u)
-                VALUES ('{$_SESSION["unique_id"]}', '{$dscr}', 1)");
+      $sql101 = mysqli_query($conn, "SELECT * from companii where random_id='{$_SESSION["unique_id"]}' ");
+      if($sql101)
+      {
+
+      }
+      else
+      printf("Connect failed: %s\n", mysqli_error($conn));
+
+      $row101= mysqli_fetch_assoc($sql101);
+      $indi= $row101['indice']+1; 
+
+      
+
+
+      $sql90 = mysqli_query($conn,"UPDATE  companii SET indice='{$indi}' WHERE random_id = '{$_SESSION["unique_id"]}'");
+
+
+    $name= $indi."c".$_SESSION["unique_id"];
+    $sql66=mysqli_query($conn,"CREATE TABLE $name(id int(10) NOT NULL AUTO_INCREMENT, done int(10), id_job int(100),primary key (id) )");
+    if($sql66)
+    {
+     echo "ceuau";
+    }
+    else
+    printf("Connect failed:yyyyyy %s\n", mysqli_error($conn));
+
+
+
+
+$sql2 = mysqli_query($conn, "INSERT INTO $chs (random_id, description, c_u, indice)
+                VALUES ('{$_SESSION["unique_id"]}', '{$dscr}', 1,'{$indi}')");
     if($sql2)
     {
         header("Location:comp.php");

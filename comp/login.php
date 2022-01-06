@@ -6,7 +6,7 @@ if(isset($_SESSION["unique_id"]))
 header("Location: main.php");
 ?>
 <body class="sarc">
-    <div class="container" class="sketchy">
+    <div class="container" >
         <img src="../images/log.jpg" alt="">
         <div class="login">
             <p>LOGIN your account</p>
