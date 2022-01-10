@@ -14,7 +14,7 @@ $sql = mysqli_query($conn, "SELECT * from users WHERE random_id = '{$_SESSION["u
 
 $row = mysqli_fetch_assoc($sql);
 
-if($row['este']!=NULL)
+if(isset($row['este']))
 {
 ?>
 <?php
@@ -54,6 +54,10 @@ $sqld=mysqli_query($conn, "RENAME TABLE  $name2 to $name");
     <button type="button" onclick="desc(<?php echo $_SESSION['unique_id'];  ?>, 0)" class="pd1 descopera">
         Descopera
     </button>
+    <button type="button" onclick="chat(<?php echo $_SESSION['unique_id'];  ?>, 0)" class="pd1 descopera3">
+        Chat
+    </button>
+    
     
 </div>
 <div class="scrrc">

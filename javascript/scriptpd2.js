@@ -38,7 +38,7 @@ let chm = document.querySelector('.adaugare');
  
 
 
- const desc = (str) =>{
+ const desc = (str, c, r) =>{
     dsc.style.backgroundColor="#fff";
     prof.style.backgroundColor="antiquewhite";
    
@@ -62,10 +62,10 @@ let chm = document.querySelector('.adaugare');
 
  console.log(str);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send("i="+str);
+    xhr.send("i="+str+"&"+"c="+c+"&"+"r="+r);
 
     }
-
+ 
 
 
 

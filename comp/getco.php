@@ -38,7 +38,7 @@ $output2=$output2.'
                <button type="button" name="submit22">
                  Change
                </button>
-               <button type="button" onclick="desc('.$id.')" class="pd1 descopera">
+               <button type="button" onclick="desc('.$id.','.$row31['indice'].', 0)" class="pd1 descopera">
                  Descopera
                </button>
                ';

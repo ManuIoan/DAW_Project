@@ -6,7 +6,7 @@ header("Location: register.php");
 
 ?>
 
-<body class="sarc">
+<body class="sarc parc">
 <div class="adaugare">
 <div class="chm">
     
@@ -100,7 +100,7 @@ $inop--;
                <button type="button" name="submit22">
                  Change
                </button>
-               <button type="button" onclick="desc('.$_SESSION['unique_id'].')" class="pd1 descopera">
+               <button type="button" onclick="desc('.$_SESSION['unique_id'].','.$row31['indice'].', 0)" class="pd1 descopera">
                  Descopera
                </button>
                ';

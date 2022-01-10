@@ -102,8 +102,8 @@ textarea {
     height: 150px;
   }
   .ma{
-      width: 500px;
-      height: 500px;
+      width: 600px;
+      height: 700px;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 3px;
       
       
@@ -115,7 +115,7 @@ textarea {
   }
   .pd1{
       
-      width: 250px;
+      width: 200px;
       height: 50px;
       background-color: antiquewhite;
       padding: 0px;
@@ -160,6 +160,7 @@ textarea {
       display: flex;
       flex-direction: column;
       align-items: center;
+      
       font-size: 1.5rem;
   }
  
@@ -167,7 +168,7 @@ textarea {
       width:200px;
       height: 200px;
       border-radius: 50%;
-      margin-top: 20px;
+      margin-top: 80px;
   }
 
 .udos{
@@ -229,4 +230,17 @@ textarea {
 
 .bro{
     background-color: antiquewhite;
+}
+ .parc img{
+    width:200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+.descopera3{
+    background-color: none;
+    
+      
+      border: 0px;
+      background-color: rgb(212, 208, 200);
 }

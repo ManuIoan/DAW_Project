@@ -1,5 +1,6 @@
 let prof = document.querySelector('.profile');
 let dsc = document.querySelector('.descopera');
+let cht = document.querySelector('.descopera3');
 let scr = document.querySelector('.scrrc');
 let desc44 = document.querySelector('bi-suit-heart-fil');
 
@@ -10,6 +11,7 @@ let desc44 = document.querySelector('bi-suit-heart-fil');
  const profile = (str) =>{
     prof.style.backgroundColor="#fff";
     dsc.style.backgroundColor="antiquewhite";
+    cht.style.backgroundColor="rgb(212, 208, 200)";
   
 
       let xhr = new XMLHttpRequest();
@@ -44,6 +46,7 @@ let desc44 = document.querySelector('bi-suit-heart-fil');
  const desc = (str, r) =>{
     dsc.style.backgroundColor="#fff";
     prof.style.backgroundColor="antiquewhite";
+    cht.style.backgroundColor="rgb(212, 208, 200)";
     scr.innerHTML= ``;
 
 
@@ -67,4 +70,17 @@ let desc44 = document.querySelector('bi-suit-heart-fil');
    console.log(str);
       xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xhr.send("i="+str+"&"+"r="+r);
+}
+
+
+
+
+const chat = (str)=>{
+   cht.style.backgroundColor="#fff";
+    prof.style.backgroundColor="antiquewhite";
+    dsc.style.backgroundColor="rgb(212, 208, 200)";
+    scr.innerHTML= ``;
+
+
+   console.log("curte");
 }
