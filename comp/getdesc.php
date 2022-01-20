@@ -53,7 +53,10 @@ $sql3 = mysqli_query($conn, "SELECT * from $name ");
       $name_mu=$name."m";
       $sql1001= mysqli_query($conn, "SELECT * from $name_mu");
       if($sql1001)
-      {}
+      {
+        $sql707 = mysqli_query($conn, "INSERT INTO $name_mu (comp)
+        VALUES ('{$rowc['id_job']}' )");
+      }
       else{
         $sql202 = mysqli_query($conn, "CREATE TABLE $name_mu(id int(10) NOT NULL AUTO_INCREMENT, comp int(100), primary key (id)) ");
         $sql707 = mysqli_query($conn, "INSERT INTO $name_mu (comp)
@@ -62,7 +65,8 @@ $sql3 = mysqli_query($conn, "SELECT * from $name ");
        
       $sql1001= mysqli_query($conn, "SELECT * from $name_mc");
       if($sql1001)
-      {}
+      {  $sql707 = mysqli_query($conn, "INSERT INTO $name_mc (user)
+        VALUES ('{$idwd}' )");}
       else{
         $sql202 = mysqli_query($conn, "CREATE TABLE $name_mc(id int(10) NOT NULL AUTO_INCREMENT, user int(100), primary key (id)) ");
         $sql707 = mysqli_query($conn, "INSERT INTO $name_mc (user)

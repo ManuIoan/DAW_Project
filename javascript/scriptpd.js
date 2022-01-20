@@ -79,7 +79,27 @@ const chat = (str)=>{
    cht.style.backgroundColor="#fff";
     prof.style.backgroundColor="antiquewhite";
     dsc.style.backgroundColor="rgb(212, 208, 200)";
-    scr.innerHTML= ``;
+    
+    let xhr = new XMLHttpRequest();
+      //creating XML object
+      xhr.open("POST", "getchat.php", true);
+      xhr.onload = ()=>{
+         if(xhr.readyState === XMLHttpRequest.DONE)
+         {
+             if(xhr.status === 200){
+                 let data = xhr.response;
+                 scr.innerHTML = data;
+                 
+                 
+                 
+             }
+         }
+      }
+  
+   console.log(str);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhr.send("i="+str);
+
 
 
    console.log("curte");
