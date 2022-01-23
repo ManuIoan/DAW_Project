@@ -88,7 +88,11 @@ else
         {
         $sql10 = mysqli_query($conn, "SELECT * from $cec WHERE id_wd = '{$rowc['id_job']}' ");
         $rowg = mysqli_fetch_assoc($sql10);
-        $output.='<img src="../images/pht.jpg" alt="">
+        $mus = $rowg['random_id'];
+        $sql72= mysqli_query($conn, "SELECT * from companii  WHERE random_id = '{$mus}'");
+        $rowgu = mysqli_fetch_assoc($sql72);
+        
+        $output.='<img src="../images/'.$rowgu['img'].'" alt="">
 
 <div class="tot">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

@@ -18,6 +18,7 @@ header("Location: register.php");
             <input type="text" name="un2"     placeholder="fname" class="tex" required>
             <input type="password" name="pass1"  placeholder="password" class="tex" required>
             <input type="password"  name="pass2" placeholder="password again" class="tex" required>
+            <input type="file"  name="img"  required>
 
             
 
@@ -48,6 +49,12 @@ header("Location: register.php");
     $user2 = $_POST['un2'];
     $pass1 =  $_POST['pass1'];
     $pass2 =  $_POST['pass2'];
+    $img_name = $_FILES['img']['name'];
+    $tmp_name = $_FILES['img']['tmp_name'];
+
+    $img_explode = explode('.', $img_name);
+       $img_ext     = end($img_explode);
+   
     
     if($pass1!= $pass2)
          echo "Parolele difera";
@@ -69,8 +76,10 @@ header("Location: register.php");
         else
             {
                 $random_id = rand(time(), 1000000);
-                $sql2 = mysqli_query($conn, "INSERT INTO users (random_id, email, lname, fname, passwords, c_u)
-                VALUES ('{$random_id}','{$email}','{$user}','{$user2}','{$pass1}','{$_SESSION["check"]}')");
+                $new_img_name = $random_id.$img_name;
+                move_uploaded_file($tmp_name, "../images/".$new_img_name);
+                $sql2 = mysqli_query($conn, "INSERT INTO users (random_id, email, lname, fname, passwords, c_u, img)
+                VALUES ('{$random_id}','{$email}','{$user}','{$user2}','{$pass1}','{$_SESSION["check"]}','{$new_img_name}')");
                if($sql2)
                {
                 $_SESSION["unique_id"]=$random_id;

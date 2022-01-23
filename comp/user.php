@@ -61,7 +61,7 @@ $sqld=mysqli_query($conn, "RENAME TABLE  $name2 to $name");
     
 </div>
 <div class="scrrc">
-    <img src="../images/pht.jpg" alt="">
+    <img src="../images/<?php echo $row['img']; ?>" alt="">
     <p>
         Numele tau este:
  <?php
