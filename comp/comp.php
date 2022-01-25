@@ -126,11 +126,22 @@ $inop--;
     }
     ?>
 
+<div class="logout">
+<form method="post">
+  <input type="submit" name="submit2255" class="butl" value="Log Out">
+   
 
+</form>
+</div>
     </div>
     <script src="../javascript/scriptpd2.js"></script>
 </body>
 
 <?php
+if(isset($_POST['submit2255']))
+{
+    $_SESSION["unique_id"]= null;
+    header("Location: login.php");
+}
 require 'sub.php';
 ?>

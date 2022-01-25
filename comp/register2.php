@@ -22,10 +22,10 @@ header("Location: register.php");
 
             
 
-            <button type="submit" class="tex" name="submit2">
+            <button type="submit" class="tex" name="submit2" onclick="continueBtn()">
                 Register
             </button>
-
+            <div class="avert"> </div>
             </form>
             <div class="reg">
             <h5>Ai cont?</h5>
@@ -107,7 +107,7 @@ header("Location: register.php");
     // }
     ?>
 
-
+<script src="../javascript/geterrors3.js"></script>
 </body>
 <?php
 require 'sub.php';

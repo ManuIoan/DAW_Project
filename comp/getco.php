@@ -51,6 +51,13 @@ $output2=$output2.'
        }
        else
        printf("Connect failed: %s\n", mysqli_error($conn));
+       $output2= $output2.'<div class="logout">
+       <form method="post">
+         <input type="submit" name="submit2255" class="butl" value="Log Out">
+          
+       
+       </form>
+       </div>';
        echo $output2;
        ?>
     

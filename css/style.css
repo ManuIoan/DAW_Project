@@ -167,7 +167,7 @@ textarea {
   .scrrc img{
       width:200px;
       height: 200px;
-      border-radius: 50%;
+     border-radius: 5%;
       margin-top: 80px;
   }
 
@@ -194,7 +194,7 @@ textarea {
     flex-direction: column;
     
     align-items: center;
-    width: 500px;
+    width: 600px;
     height: 800px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 3px;
 }
@@ -259,4 +259,20 @@ textarea {
     
     margin-top: 0px;
     
+}
+.geogr{
+    margin-top: 115px;
+}
+
+.logout
+{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+}
+.butl{
+    position:absolute ;
+    bottom: 70px;
+    left: 50px;
 }

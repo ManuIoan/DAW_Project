@@ -65,6 +65,38 @@ let chm = document.querySelector('.adaugare');
     xhr.send("i="+str+"&"+"c="+c+"&"+"r="+r);
 
     }
+
+
+
+    const chat = (str) =>{
+      cht.style.backgroundColor="#fff";
+    prof.style.backgroundColor="antiquewhite";
+    dsc.style.backgroundColor="rgb(212, 208, 200)";
+     
+  
+  
+      let xhr = new XMLHttpRequest();
+      //creating XML object
+      xhr.open("POST", "getcochat.php", true);
+      xhr.onload = ()=>{
+         if(xhr.readyState === XMLHttpRequest.DONE)
+         {
+             if(xhr.status === 200){
+                 let data = xhr.response;
+                 chm.innerHTML = data;
+                 
+                 
+                 
+             }
+         }
+      }
+  
+   console.log(str);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhr.send("i="+str+"&"+"c="+c);
+  
+      }
+   
  
 
 

@@ -3,7 +3,7 @@
 require 'antet.php';
 session_start();
  if($_SESSION["unique_id"]==null)
-header("Location: register.php");
+header("Location: login.php");
 
 ?>
 
@@ -63,13 +63,14 @@ $sqld=mysqli_query($conn, "RENAME TABLE  $name2 to $name");
 <div class="scrrc">
     <img src="../images/<?php echo $row['img']; ?>" alt="">
     <p>
-        Numele tau este:
+        
  <?php
   echo $row['lname']." ".$row['fname'];
  
  ?>
     </p>
     <div class="tot">
+        
        <div class="despre">
            <p>
         <?php
@@ -92,8 +93,16 @@ $sqld=mysqli_query($conn, "RENAME TABLE  $name2 to $name");
     <form method="post">
   <input type="submit" name="submit22" value="Change"/>
     </form>
+
+    
 </div>
-      
+<div class="logout">
+<form method="post">
+  <input type="submit" name="submit2255" class="butl" value="Log Out">
+   
+
+</form>
+</div>
 
 </div>
 <?php
@@ -108,6 +117,12 @@ if($sql5)
     }
     else
     printf("Connect failed: %s\n", mysqli_error($conn));
+}
+
+if(isset($_POST['submit2255']))
+{
+    $_SESSION["unique_id"]= null;
+    header("Location: login.php");
 }
 
 ?>

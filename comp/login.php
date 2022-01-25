@@ -13,9 +13,10 @@ header("Location: main.php");
             <form action="" class="f1" method="post" enctype="multipart/form-data">
             <input type="text" placeholder="email" name="email" class="tex">
             <input type="password" placeholder="password" name="password" class="tex">
-            <button type="submit" class="tex" name="submit3">
+            <button type="submit" class="tex" name="submit3" onclick="continueBtn()">
                 Trimite
             </button>
+            <div class="avert"></div>
 
             </form>
             <div class="reg">
@@ -27,37 +28,8 @@ header("Location: main.php");
         </div>
     </div>
 </body>
-<?php
-include_once "connect.php";
- if(isset($_POST['submit3']))
- {
-     $email = $_POST['email'];
-     $pass = $_POST['password'];
-     $sql = mysqli_query($conn, "SELECT * from users WHERE email = '{$email}' AND passwords = '{$pass}'");
-     if(mysqli_num_rows($sql) > 0)
-     {
-     $row = mysqli_fetch_assoc($sql);
-     $_SESSION['unique_id']=$row['random_id'];
-     $_SESSION['c_u']=$row['c_u'];
-     header("Location: main.php");
-     }
-     else{
-        $sql = mysqli_query($conn, "SELECT * from companii WHERE email = '{$email}' AND password = '{$pass}'");
-        if(mysqli_num_rows($sql) > 0)
-     {
-     $row = mysqli_fetch_assoc($sql);
-     $_SESSION['unique_id']=$row['random_id'];
-     $_SESSION['c_u']=$row['c_u'];
-     header("Location: main.php");
-     }
-    }
- }
- else 
- echo "BAY";
 
-
-
-?>
+<script src="../javascript/input.js"></script>
 <?php
 require 'sub.php';
 ?>
