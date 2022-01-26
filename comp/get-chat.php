@@ -3,12 +3,19 @@ session_start();
 $output = "";
 if(isset($_SESSION['unique_id']))
 {
-include_once "config.php";
+include_once "connect.php";
 $outgoing_id = mysqli_real_escape_string($conn, $_POST['outgoing_id']); 
 $incoming_id = mysqli_real_escape_string($conn, $_POST['incoming_id']); 
-
+$ok = mysqli_real_escape_string($conn, $_POST['user']); 
+ 
+if($ok==1)
 $sql = "SELECT * FROM messages
-        LEFT JOIN users ON unique_id = messages.outgoing_msg_id
+        LEFT JOIN users ON random_id = messages.outgoing_msg_id
+        WHERE (outgoing_msg_id={$outgoing_id} AND incoming_msg_id = {$incoming_id})
+        OR (outgoing_msg_id={$incoming_id} AND incoming_msg_id = {$outgoing_id}) ORDER BY msg_id ASC";
+else
+$sql = "SELECT * FROM messages
+        LEFT JOIN companii ON random_id = messages.outgoing_msg_id
         WHERE (outgoing_msg_id={$outgoing_id} AND incoming_msg_id = {$incoming_id})
         OR (outgoing_msg_id={$incoming_id} AND incoming_msg_id = {$outgoing_id}) ORDER BY msg_id ASC";
 
@@ -27,7 +34,7 @@ if($row['outgoing_msg_id'] === $outgoing_id)
 }
 else{
      $output .= '<div class="chat incoming">
-     <img src="php/images/'. $row['img'].'" alt="">
+     <img src="../images/'. $row['img'].'" alt="">
      <div class="details">
           <p>'. $row['msg'] .'</p>
       </div>

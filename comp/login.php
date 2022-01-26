@@ -21,7 +21,7 @@ header("Location: main.php");
             </form>
             <div class="reg">
             <h5>Nu ai cont?</h5>
-            <a href="register.php">Inregistreaza-te</a>
+            <a href="../register/register.php">Inregistreaza-te</a>
             </div>
 
             </div>

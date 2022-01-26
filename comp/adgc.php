@@ -46,8 +46,21 @@ echo $dscr;
 echo $chs;
 
 
-$sql5 =  mysqli_query($conn, "INSERT INTO domc (random_id, este)
-VALUES ('{$_SESSION["unique_id"]}',  '{$chs}')");
+$sql101 = mysqli_query($conn, "SELECT * from companii where random_id='{$_SESSION["unique_id"]}' ");
+      if($sql101)
+      {
+
+      }
+      else
+      printf("Connect failed: %s\n", mysqli_error($conn));
+
+      $row101= mysqli_fetch_assoc($sql101);
+      $indi= $row101['indice']+1; 
+
+
+
+$sql5 =  mysqli_query($conn, "INSERT INTO domc (random_id, este, indice)
+VALUES ('{$_SESSION["unique_id"]}',  '{$chs}', '{$indi}')");
 
 if($sql5)
     {
@@ -59,16 +72,7 @@ if($sql5)
     
 
 
-      $sql101 = mysqli_query($conn, "SELECT * from companii where random_id='{$_SESSION["unique_id"]}' ");
-      if($sql101)
-      {
-
-      }
-      else
-      printf("Connect failed: %s\n", mysqli_error($conn));
-
-      $row101= mysqli_fetch_assoc($sql101);
-      $indi= $row101['indice']+1; 
+      
 
       
 

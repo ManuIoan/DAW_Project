@@ -1,9 +1,9 @@
 
 <?php
-require 'antet.php';
+require '../comp/antet.php';
 session_start();
 if(isset($_SESSION["unique_id"]))
-header("Location: main.php");
+header("Location: ../comp/main.php");
  if($_SESSION["check"]==null)
 header("Location: register.php");
 ?>
@@ -29,7 +29,7 @@ header("Location: register.php");
             </form>
             <div class="reg">
             <h5>Ai cont?</h5>
-            <a href="login.php">Conecteaza-te</a>
+            <a href="../comp/login.php">Conecteaza-te</a>
             </div>
             
             
@@ -38,7 +38,7 @@ header("Location: register.php");
     </div>
     <?php
     
-    include_once "connect.php";
+    include_once "../comp/connect.php";
     
 
    
@@ -90,7 +90,7 @@ header("Location: register.php");
                 $_SESSION["unique_id"]=$random_id;
                 $_SESSION["c_u"]=1;
 
-               header("Location: main.php");
+               header("Location: ../comp/main.php");
                }
                else
                printf("Connect failed: %s\n", mysqli_error($conn));
@@ -110,5 +110,5 @@ header("Location: register.php");
 <script src="../javascript/geterrors3.js"></script>
 </body>
 <?php
-require 'sub.php';
+require '../comp/sub.php';
 ?>

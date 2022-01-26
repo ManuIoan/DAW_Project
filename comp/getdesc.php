@@ -5,15 +5,31 @@ $output="";
 
 $id = mysqli_real_escape_string($conn, $_POST['i']);
 $r = mysqli_real_escape_string($conn, $_POST['r']);
+$este = mysqli_real_escape_string($conn, $_POST['c']);
+
+
+if($este==0)
+$ico="wd";
+else
+if($este==1)
+$ico="md";
+else
+$ico = "dd";
+
+// $ids= ""."id_".$este;
+// echo $este;
 
 $sql2 = mysqli_query($conn, "SELECT * from users where random_id = '{$id}'");
 $row = mysqli_fetch_assoc($sql2);
 $cec= $row['este'];
 
 
-$sql294 = mysqli_query($conn, "SELECT * from wd where random_id = '{$id}'");
+$sql294 = mysqli_query($conn, "SELECT * from $ico where random_id = '{$id}'");
 $row294 = mysqli_fetch_assoc($sql294);
-$idwd = $row294['id_wd']; 
+
+$ids= "id_".$ico;
+
+$idwd = $row294[$ids]; 
 
 
 
@@ -32,7 +48,7 @@ $sql3 = mysqli_query($conn, "SELECT * from $name ");
     printf("Connect failed: %s\n", mysqli_error($conn));
     if($r==1)
     {
-    $sql220 = mysqli_query($conn, "SELECT * FROM wd WHERE id_wd= '{$rowc['id_job']}'");
+    $sql220 = mysqli_query($conn, "SELECT * FROM $ico WHERE $ids= '{$rowc['id_job']}'");
     $row220=mysqli_fetch_assoc($sql220);
     $nameu= "".$row220['indice'].'c'.$row220['random_id'];
 
@@ -86,8 +102,13 @@ $sql3 = mysqli_query($conn, "SELECT * from $name ");
 }
 else
         {
-        $sql10 = mysqli_query($conn, "SELECT * from $cec WHERE id_wd = '{$rowc['id_job']}' ");
+        $sql10 = mysqli_query($conn, "SELECT * from $cec WHERE $ids = '{$rowc['id_job']}' ");
+
+
+        if($sql10)
         $rowg = mysqli_fetch_assoc($sql10);
+        else
+        printf("Connect failed:yyyyyy %s\n", mysqli_error($conn));
         $mus = $rowg['random_id'];
         $sql72= mysqli_query($conn, "SELECT * from companii  WHERE random_id = '{$mus}'");
         $rowgu = mysqli_fetch_assoc($sql72);
@@ -106,11 +127,11 @@ else
 </div>
 <div class="chm">
     
-    <button type="button" onclick="desc('.$id.', -1)" class="profile2">
+    <button type="button" onclick="desc('.$id.', -1, '.$este.')" class="profile2">
     
     <span class="glyphicon glyphicon-thumbs-down"></span>
     </button>
-    <button type="button" onclick="desc('.$id.', 1)" class="descopera2">
+    <button type="button" onclick="desc('.$id.', 1, '.$este.')" class="descopera2">
     <span class="glyphicon glyphicon-thumbs-up"></span>
     </button>
     

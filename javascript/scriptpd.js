@@ -43,11 +43,11 @@ let desc44 = document.querySelector('bi-suit-heart-fil');
  }
 
 
- const desc = (str, r) =>{
+ const desc = (str, r, c) =>{
     dsc.style.backgroundColor="#fff";
     prof.style.backgroundColor="antiquewhite";
     cht.style.backgroundColor="rgb(212, 208, 200)";
-    scr.innerHTML= ``;
+    console.log(c);
 
 
 
@@ -69,13 +69,13 @@ let desc44 = document.querySelector('bi-suit-heart-fil');
   
    console.log(str);
       xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhr.send("i="+str+"&"+"r="+r);
+      xhr.send("i="+str+"&"+"r="+r+"&"+"c="+c);
 }
 
 
 
 
-const chat = (str)=>{
+const chat = (str,l)=>{
    cht.style.backgroundColor="#fff";
     prof.style.backgroundColor="antiquewhite";
     dsc.style.backgroundColor="rgb(212, 208, 200)";
@@ -98,7 +98,7 @@ const chat = (str)=>{
   
    console.log(str);
       xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhr.send("i="+str);
+      xhr.send("i="+str+"&"+"l="+l);
 
 
 

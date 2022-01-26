@@ -1,8 +1,8 @@
 <?php
 session_start();
-include_once "antet.php";
+include_once "../comp/antet.php";
 if(isset($_SESSION["unique_id"]))
-header("Location: main.php");
+header("Location: ../comp/main.php");
 ?>
 <body class="sarc">
 <div class="container2" >
@@ -30,7 +30,7 @@ header("Location: main.php");
 </div>
 </body>
 <?php
-include_once "sub.php";
+include_once "../comp/sub.php";
 
 if(isset($_POST['submit2'])&& isset($_POST['check']))
 {

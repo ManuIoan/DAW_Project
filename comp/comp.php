@@ -37,26 +37,46 @@ $sql101 = mysqli_query($conn, "SELECT * from companii where random_id='{$_SESSIO
 if($row101['indice']!=0)
 {
 $inop=$row101['indice'];
+
 while($inop!=0)
 {
 
 $name= $inop."c".$_SESSION["unique_id"];
 
+$sql21 = mysqli_query($conn, "SELECT * from domc WHERE random_id = '{$_SESSION['unique_id']}' AND  indice = '{$inop}' ");
+$row21 = mysqli_fetch_assoc($sql21);
+$este = $row21['este'];
+if($este =="wd")
+                {
+                   $ids= "id_wd";
+                   $co = 0;
+                   }
+                   else 
+                   if($este=="md")
+                   {
+                   $ids= "id_md";
+                   $co = 1;
+                   }
+                   else 
+                   if($este=="dd")
+                   {
+                   $ids= "id_dd";
+                   $co = 2;
+                   }
 
 
-
-$sql77=mysqli_query($conn,"SELECT distinct wd.id_wd, $name.done
-FROM wd
+$sql77=mysqli_query($conn,"SELECT distinct $este.$ids, $name.done
+FROM $este
 LEFT JOIN $name
-ON wd.id_wd=$name.id_job
-WHERE wd.c_u =0");
+ON $este.$ids=$name.id_job
+WHERE $este.c_u =0");
 
 $name2= $name."c";
 $sql668=mysqli_query($conn,"CREATE TABLE $name2(id int(10) NOT NULL AUTO_INCREMENT, done int(10), id_job int(100),primary key (id) )");
 
 while($row77 = mysqli_fetch_assoc($sql77))
 {
- $sql100= mysqli_query($conn, "INSERT INTO $name2(done, id_job) VALUES('{$row77["done"]}', '{$row77["id_wd"]}' )");
+ $sql100= mysqli_query($conn, "INSERT INTO $name2(done, id_job) VALUES('{$row77["done"]}', '{$row77[$ids]}' )");
 
 
 
@@ -85,13 +105,31 @@ $inop--;
        $sql21 = mysqli_query($conn, "SELECT * from domc WHERE random_id = '{$_SESSION["unique_id"]}' ");
        if($sql21)
        {
-        if($row21 = mysqli_fetch_assoc($sql21)){
+        while($row21 = mysqli_fetch_assoc($sql21)){
             $cec2= $row21['este'];
-            $sql31 = mysqli_query($conn, "SELECT * from $cec2 WHERE random_id = '{$_SESSION["unique_id"]}' ");
+            $sql31 = mysqli_query($conn, "SELECT * from $cec2 WHERE random_id = '{$_SESSION['unique_id']}' AND indice ='{$row21['indice']}'");
             if($sql31)
-            {
+            {    
+
+                if($cec2 =="wd")
+                {
+                   $ids= "id_wd";
+                   $co = 0;
+                   }
+                   else 
+                   if($cec2=="md")
+                   {
+                   $ids= "id_md";
+                   $co = 1;
+                   }
+                   else 
+                   if($cec2=="dd")
+                   {
+                   $ids= "id_dd";
+                   $co = 2;
+                   }
                 $output="";
-                while($row31 = mysqli_fetch_assoc($sql31))
+                if($row31 = mysqli_fetch_assoc($sql31))
                 $output.=
                  '<div class="despre">
                  <p>'.$row31['wut'].'</p>
@@ -100,7 +138,7 @@ $inop--;
                <button type="button" name="submit22">
                  Change
                </button>
-               <button type="button" onclick="desc('.$_SESSION['unique_id'].','.$row31['indice'].', 0)" class="pd1 descopera">
+               <button type="button" onclick="desc('.$_SESSION['unique_id'].','.$row31['indice'].', 0,'.$co.')" class="pd1 descopera">
                  Descopera
                </button>
                ';

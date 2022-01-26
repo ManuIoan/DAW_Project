@@ -11,15 +11,31 @@ $id = mysqli_real_escape_string($conn, $_POST['i']);
 $c = mysqli_real_escape_string($conn, $_POST['c']);
 $r = mysqli_real_escape_string($conn, $_POST['r']);
 
+
+$este = mysqli_real_escape_string($conn, $_POST['l']);
+
+
+if($este==0)
+$ico="wd";
+else
+if($este==1)
+$ico="md";
+else
+$ico = "dd";
+
+
+
+
 $name = $c."c".$id;
 
 $sql3 = mysqli_query($conn, "SELECT * from $name ");
 
 
 
-$sql294 = mysqli_query($conn, "SELECT * from wd where random_id = '{$id}' AND indice='{$c}'");
+$sql294 = mysqli_query($conn, "SELECT * from $ico where random_id = '{$id}' AND indice='{$c}'");
 $row294 = mysqli_fetch_assoc($sql294);
-$idwd = $row294['id_wd'];
+$ids= "id_".$ico;
+$idwd = $row294[$ids];
 
 
 
@@ -32,7 +48,7 @@ $output ="".'<div class="chm">
 <button type="button" onclick="descopera('.$id.')" class="pd1 profile ">
     Descopera
 </button>
-<button type="button" onclick="chat('.$id.','.$c.')" class="pd1 descopera3">
+<button type="button" onclick="chat('.$id.','.$c.', '.$este.')" class="pd1 descopera3">
         Chat
     </button>
 
@@ -51,7 +67,7 @@ else
 printf("Connect failed: %s\n", mysqli_error($conn));
 if($r==1)
 {   
-    $sql220 = mysqli_query($conn, "SELECT * FROM wd WHERE id_wd= '{$rowc['id_job']}'");
+    $sql220 = mysqli_query($conn, "SELECT * FROM $ico WHERE $ids= '{$rowc['id_job']}'");
     $row220 = mysqli_fetch_assoc($sql220);
     $nameu  = 'u'.$row220['random_id'];
    
@@ -113,7 +129,7 @@ $r=0;
 }
 else
     {
-    $sql10 = mysqli_query($conn, "SELECT * from wd WHERE id_wd = '{$rowc['id_job']}' ");
+    $sql10 = mysqli_query($conn, "SELECT * from $ico WHERE $ids = '{$rowc['id_job']}' ");
     $rowg = mysqli_fetch_assoc($sql10);
     $mus = $rowg['random_id'];
         $sql72= mysqli_query($conn, "SELECT * from users  WHERE random_id = '{$mus}'");
@@ -132,11 +148,11 @@ else
 </div>
 <div class="chm">
 
-<button type="button" onclick="desc('.$id.','.$c.', -1)" class="profile2">
+<button type="button" onclick="desc('.$id.','.$c.', -1, '.$este.')" class="profile2">
 
 <span class="glyphicon glyphicon-thumbs-down"></span>
 </button>
-<button type="button" onclick="desc('.$id.','.$c.', 1)" class="descopera2">
+<button type="button" onclick="desc('.$id.','.$c.', 1, '.$este.')" class="descopera2">
 <span class="glyphicon glyphicon-thumbs-up"></span>
 </button>
 

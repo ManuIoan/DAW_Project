@@ -39,7 +39,7 @@ let cht = document.querySelector('.descopera3');
  
 
 
- const desc = (str, c, r) =>{
+ const desc = (str, c, r,l) =>{
     dsc.style.backgroundColor="#fff";
     prof.style.backgroundColor="antiquewhite";
    
@@ -63,13 +63,13 @@ let cht = document.querySelector('.descopera3');
 
  console.log(str);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send("i="+str+"&"+"c="+c+"&"+"r="+r);
+    xhr.send("i="+str+"&"+"c="+c+"&"+"r="+r+"&"+"l="+l);
 
     }
 
 
 
-    const chat = (str, c) =>{
+    const chat = (str, c, l) =>{
 
 
 
@@ -100,7 +100,7 @@ let cht = document.querySelector('.descopera3');
   
    console.log(str);
       xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhr.send("i="+str+"&"+"c="+c);
+      xhr.send("i="+str+"&"+"c="+c+"&"+"l="+l);
   
       }
    

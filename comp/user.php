@@ -21,21 +21,39 @@ if(isset($row['este']))
 
 $name= "u".$_SESSION["unique_id"];
 
+$este = $row['este'];
 
 
+if($este=="wd")
+{
+$ids= "id_wd";
+$co = 0;
+}
+else 
+if($este=="md")
+{
+$ids= "id_md";
+$co = 1;
+}
+else 
+if($este=="dd")
+{
+$ids= "id_dd";
+$co = 2;
+}
 
-$sql77=mysqli_query($conn,"SELECT distinct wd.id_wd, $name.done
-FROM wd
+$sql77=mysqli_query($conn,"SELECT distinct $este.$ids, $name.done
+FROM $este
 LEFT JOIN $name
-ON wd.id_wd=$name.id_job
-WHERE wd.c_u =1");
+ON $este.$ids=$name.id_job
+WHERE $este.c_u =1");
 
 $name2= $name."c";
 $sql668=mysqli_query($conn,"CREATE TABLE $name2(id int(10) NOT NULL AUTO_INCREMENT, done int(10), id_job int(100),primary key (id) )");
 
 while($row77 = mysqli_fetch_assoc($sql77))
 {
- $sql100= mysqli_query($conn, "INSERT INTO $name2(done, id_job) VALUES('{$row77["done"]}', '{$row77["id_wd"]}' )");
+ $sql100= mysqli_query($conn, "INSERT INTO $name2(done, id_job) VALUES('{$row77["done"]}', '{$row77[$ids]}' )");
 
 
 
@@ -51,10 +69,10 @@ $sqld=mysqli_query($conn, "RENAME TABLE  $name2 to $name");
     <button type="button" onclick="profile(<?php echo $_SESSION['unique_id'];  ?>)" class="pd1 profile">
         Profile
     </button>
-    <button type="button" onclick="desc(<?php echo $_SESSION['unique_id'];  ?>, 0)" class="pd1 descopera">
+    <button type="button" onclick="desc(<?php echo $_SESSION['unique_id'];  ?>, 0, <?php echo $co;  ?>)" class="pd1 descopera">
         Descopera
     </button>
-    <button type="button" onclick="chat(<?php echo $_SESSION['unique_id'];  ?>, 0)" class="pd1 descopera3">
+    <button type="button" onclick="chat(<?php echo $_SESSION['unique_id'];  ?>, <?php echo $co;?>)" class="pd1 descopera3">
         Chat
     </button>
     

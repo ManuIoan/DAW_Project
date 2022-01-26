@@ -42,19 +42,31 @@ include_once "antet.php";
              include_once "connect.php";
              $user_id = mysqli_real_escape_string($conn, $_GET['user_id']);
              $sql =mysqli_query($conn, "SELECT * FROM users WHERE random_id = '{$user_id}'");
+             $sql2 =mysqli_query($conn, "SELECT * FROM companii WHERE random_id = '{$user_id}'");
              if(mysqli_num_rows($sql) > 0)
              {
                  $row = mysqli_fetch_assoc($sql);
              }
+             else
+             $row = mysqli_fetch_assoc($sql2);
              
              ?>
 
 
-
+              
               <a href="main.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
               <img src="../images/<?php echo $row['img'];?>" alt="">
               <div class="details">
-                  <span><?php echo ucfirst(strtolower($row['fname'])). " ". ucfirst(strtolower($row['lname'])); ?></span>
+                  <span><?php if(isset($row['fname']))
+                  {
+                  echo  ucfirst(strtolower($row['fname'])). " ". ucfirst(strtolower($row['lname'])); 
+                    $ok = 1;
+                  }
+                  else
+                  {echo ucfirst(strtolower($row['num_comp']));
+                    $ok=0;
+                  }
+                  ?></span>
                   
               </div>
           </header>
@@ -65,7 +77,9 @@ include_once "antet.php";
          <form action="#" method="post" class="typing-area" autocomplete="off">
              <input type="text" name="outgoing_id" value="<?php echo $_SESSION['unique_id'] ?>" hidden>
              <input type="text" name="incoming_id" value="<?php echo $user_id ?>" hidden>
+             <input type="text" name="user" value="<?php echo $ok ?>" hidden>
              <input type="text" name="message" class="input-field" placeholder="Type a message here...">
+             
              <button><i class="fab fa-telegram-plane"></i></button>
          </form>
        </section>
