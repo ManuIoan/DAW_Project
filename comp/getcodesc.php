@@ -66,8 +66,7 @@ if($r==1)
     printf("Connect failed: %s\n", mysqli_error($conn));
     $row230 = mysqli_fetch_assoc($sql230);
     if(!isset($row230['done']))
-    {echo "baraban";
-        break;}
+    {}
     else
     if( $row230['done']==1)
     {
@@ -80,22 +79,22 @@ if($r==1)
       if($sql1001)
       {
         $sql707 = mysqli_query($conn, "INSERT INTO $name_mu (comp)
-        VALUES ('{$rowc['id_job']}' )");
+        VALUES ('{$idwd}' )");
       }
       else{
         $sql202 = mysqli_query($conn, "CREATE TABLE $name_mu(id int(10) NOT NULL AUTO_INCREMENT, comp int(100), primary key (id)) ");
         $sql707 = mysqli_query($conn, "INSERT INTO $name_mu (comp)
-        VALUES ('{$rowc['id_job']}' )");
+        VALUES ('{$idwd}' )");
       }
        
       $sql1001= mysqli_query($conn, "SELECT * from $name_mc");
       if($sql1001)
       {  $sql707 = mysqli_query($conn, "INSERT INTO $name_mc (user)
-        VALUES ('{$idwd}' )");}
+        VALUES ('{$rowc['id_job']}' )");}
       else{
         $sql202 = mysqli_query($conn, "CREATE TABLE $name_mc(id int(10) NOT NULL AUTO_INCREMENT, user int(100), primary key (id)) ");
         $sql707 = mysqli_query($conn, "INSERT INTO $name_mc (user)
-        VALUES ('{$idwd}' )");
+        VALUES ('{$rowc['id_job']}' )");
       }
 
  
@@ -127,7 +126,7 @@ else
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <div class="despre">
 <p>'.$rowg['wut'].'</p>
-<p>'.$rowg['description'].'</p>
+<p>'.ucfirst(strtolower($rowg['description'])).'</p>
 </div>
 
 </div>

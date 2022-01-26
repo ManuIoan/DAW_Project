@@ -2,6 +2,7 @@ let prof = document.querySelector('.profile');
 let dsc = document.querySelector('.descopera');
 let scr = document.querySelector('.musk');
 let chm = document.querySelector('.adaugare');
+let cht = document.querySelector('.descopera3');
 
  
  
@@ -68,8 +69,14 @@ let chm = document.querySelector('.adaugare');
 
 
 
-    const chat = (str) =>{
-      cht.style.backgroundColor="#fff";
+    const chat = (str, c) =>{
+
+
+
+
+
+      
+     
     prof.style.backgroundColor="antiquewhite";
     dsc.style.backgroundColor="rgb(212, 208, 200)";
      

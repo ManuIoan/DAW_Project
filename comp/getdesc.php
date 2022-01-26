@@ -100,7 +100,7 @@ else
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <div class="despre">
     <p>'.$rowg['wut'].'</p>
-    <p>'.$rowg['description'].'</p>
+    <p>'.ucfirst(strtolower($rowg['description'])).'</p>
   </div>
   
 </div>

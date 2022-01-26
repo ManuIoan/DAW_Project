@@ -14,13 +14,13 @@ $row2 = mysqli_fetch_assoc($sql10);
 
 $output.='<img src="../images/'.$row['img'].'" alt="">
 <p>
-    '.$row['lname']." ".$row['fname'].'
+    '.ucfirst(strtolower($row['lname']))." ".ucfirst(strtolower($row['fname'])).'
 
 </p>
 <div class="tot">
   <div class="despre">
     <p>'.$row2['wut'].'</p>
-    <p>'.$row2['description'].'</p>
+    <p>'.ucfirst(strtolower($row2['description'])).'</p>
   </div>
   <button type="button" name="submit22">
     Change

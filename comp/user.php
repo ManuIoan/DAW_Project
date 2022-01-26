@@ -65,7 +65,7 @@ $sqld=mysqli_query($conn, "RENAME TABLE  $name2 to $name");
     <p>
         
  <?php
-  echo $row['lname']." ".$row['fname'];
+  echo ucfirst(strtolower($row['lname']))." ".ucfirst(strtolower($row['fname']));
  
  ?>
     </p>
@@ -86,7 +86,7 @@ $sqld=mysqli_query($conn, "RENAME TABLE  $name2 to $name");
     </p>
     <p>
         <?php
-         echo $row2['description'];
+         echo ucfirst(strtolower($row2['description']));
         ?>
     </p>
     </div>

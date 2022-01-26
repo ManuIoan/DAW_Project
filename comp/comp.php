@@ -95,7 +95,7 @@ $inop--;
                 $output.=
                  '<div class="despre">
                  <p>'.$row31['wut'].'</p>
-                 <p>'.$row31['description'].'</p>
+                 <p>'.ucfirst(strtolower($row31['description'])).'</p>
                </div>
                <button type="button" name="submit22">
                  Change

@@ -10,6 +10,7 @@ $output2='<div class="chm">
 
 </div>';
 $output2=$output2.'
+<div class="musk">
 <div class="adg">
         Adauga Job
        </div>
@@ -33,12 +34,12 @@ $output2=$output2.'
                 $output2.=
                  '<div class="despre">
                  <p>'.$row31['wut'].'</p>
-                 <p>'.$row31['description'].'</p>
+                 <p>'.ucfirst(strtolower($row31['description'])).'</p>
                </div>
                <button type="button" name="submit22">
                  Change
                </button>
-               <button type="button" onclick="desc('.$id.','.$row31['indice'].', 0)" class="pd1 descopera">
+               <button type="button" onclick="desc('.$id.','.$row31['indice'].', 0)" class="pd1 pd2 descopera">
                  Descopera
                </button>
                ';
@@ -51,7 +52,7 @@ $output2=$output2.'
        }
        else
        printf("Connect failed: %s\n", mysqli_error($conn));
-       $output2= $output2.'<div class="logout">
+       $output2= $output2.'</div><div class="logout">
        <form method="post">
          <input type="submit" name="submit2255" class="butl" value="Log Out">
           
