@@ -386,3 +386,6 @@ width: 35px;
     cursor: pointer;
     border-radius: 0px 5px 5px 0px;
 }
+.input-field{
+    font-size: 20px;
+}

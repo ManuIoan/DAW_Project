@@ -9,10 +9,10 @@ header("Location: main.php");
     <div class="container" >
         <img src="../images/log.jpg" alt="">
         <div class="login">
-            <p>LOGIN your account</p>
+            <p>Conecteaza-te</p>
             <form action="" class="f1" method="post" enctype="multipart/form-data">
             <input type="text" placeholder="email" name="email" class="tex">
-            <input type="password" placeholder="password" name="password" class="tex">
+            <input type="password" placeholder="parola" name="password" class="tex">
             <button type="submit" class="tex" name="submit3" onclick="continueBtn()">
                 Trimite
             </button>

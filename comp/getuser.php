@@ -20,16 +20,15 @@ $output.='<img src="../images/'.$row['img'].'" alt="">
 <div class="tot">
   <div class="despre">
     <p>'.$row2['wut'].'</p>
-    <p>'.ucfirst(strtolower($row2['description'])).'</p>
+    <p class="lm">'.ucfirst(strtolower($row2['description'])).'</p>
   </div>
-  <button type="button" name="submit22">
-    Change
-  </button>
+  <input  type="submit" value="Schimba" name="submit22">
+    
 
 </div>
 <div class="logout">
 <form method="post">
-  <input type="submit" name="submit2255" class="butl" value="Log Out">
+  <input type="submit" name="submit2255" class="butl" value="Deconectare">
    
 
 </form>

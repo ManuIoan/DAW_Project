@@ -175,6 +175,7 @@ textarea {
     display: flex;
 }
 .tot{
+    
     display:flex;
     flex-direction: column;
     justify-content:center;
@@ -280,6 +281,7 @@ textarea {
     position:absolute ;
     bottom: 70px;
     left: 50px;
+    background-color: none;
 }
 .a1{
 
@@ -311,3 +313,30 @@ textarea {
     width: 200px;
     height: 50px;
 }
+.sc{
+    
+        margin-top:150px;
+}
+.lm{
+    font-size: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.lm2{
+    font-size: 1.1rem;
+    padding-right: 50px;
+    padding-left: 50px;
+    text-align: center;
+    
+}
+input[type="submit"] .but1 {
+
+    background-color : none; 
+  
+  }
+  .mic{
+      font-size: 1.4rem;
+      border-bottom: none;
+  }

@@ -102,5 +102,7 @@ const chat = (str,l)=>{
 
 
 
-   console.log("curte");
+   
 }
+
+

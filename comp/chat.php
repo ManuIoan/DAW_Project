@@ -78,9 +78,9 @@ include_once "antet.php";
              <input type="text" name="outgoing_id" value="<?php echo $_SESSION['unique_id'] ?>" hidden>
              <input type="text" name="incoming_id" value="<?php echo $user_id ?>" hidden>
              <input type="text" name="user" value="<?php echo $ok ?>" hidden>
-             <input type="text" name="message" class="input-field" placeholder="Type a message here...">
+             <input type="text" name="message" class="input-field" placeholder="Scrie...">
              
-             <button><i class="fab fa-telegram-plane"></i></button>
+             <button><i class="fab fa-telegram-plane "></i></button>
          </form>
        </section>
 

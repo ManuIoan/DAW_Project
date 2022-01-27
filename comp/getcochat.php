@@ -28,7 +28,7 @@ $output ="".'<div class="chm">
     </button>
 
 </div>';
-$output=$output.'<p class="bigger" >Chat with someone!</p>';
+$output=$output.'<p class="bigger" >Incepe o conversatie cu cineva!</p>';
 
 $name = $c."c".$id."m";
 

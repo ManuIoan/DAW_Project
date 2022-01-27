@@ -67,7 +67,7 @@ $sqld=mysqli_query($conn, "RENAME TABLE  $name2 to $name");
 <div class="chm">
     
     <button type="button" onclick="profile(<?php echo $_SESSION['unique_id'];  ?>)" class="pd1 profile">
-        Profile
+        Profil
     </button>
     <button type="button" onclick="desc(<?php echo $_SESSION['unique_id'];  ?>, 0, <?php echo $co;  ?>)" class="pd1 descopera">
         Descopera
@@ -102,21 +102,21 @@ $sqld=mysqli_query($conn, "RENAME TABLE  $name2 to $name");
         
         ?>
     </p>
-    <p>
+    <p class="lm">
         <?php
          echo ucfirst(strtolower($row2['description']));
         ?>
     </p>
     </div>
     <form method="post">
-  <input type="submit" name="submit22" value="Change"/>
+  <input type="submit" name="submit22" value="Schimba"/>
     </form>
 
     
 </div>
 <div class="logout">
 <form method="post">
-  <input type="submit" name="submit2255" class="butl" value="Log Out">
+  <input type="submit" name="submit2255" class="butl" value="Deconectare">
    
 
 </form>
@@ -163,13 +163,13 @@ else
 </style>
     
     <select name="chs" id="pet-select">
-    <option value="">--Please choose an option--</option>
-    <option value="wd">Web developer</option>
-    <option value="md">Mobile developer</option>
-    <option value="dd">Desktop developer</option>
+    <option value="">--Alege--</option>
+    <option value="wd">Dezvoltator Web</option>
+    <option value="md">Dezvoltator Mobile</option>
+    <option value="dd">Dezvoltator Desktop</option>
    
 </select>
-    <textarea  name="dscr"  placeholder="Your description" class="tex2" required>
+    <textarea  name="dscr"  placeholder="Descrierea ta" class="tex2" required>
 </textarea>
 <button type="submit" class="tex" name="submit4">
                Submit

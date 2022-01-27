@@ -1,6 +1,6 @@
 <?php
 include_once '../comp/connect.php';
-$output='<p class="bigger" >Chat with someone!</p>';
+$output='<p class="bigger" >Incepe o conversatie cu cineva!</p>';
 
 $id = mysqli_real_escape_string($conn, $_POST['i']);
 $este = mysqli_real_escape_string($conn, $_POST['l']);

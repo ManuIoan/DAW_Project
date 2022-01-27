@@ -50,10 +50,10 @@ $output2=$output2.'
                 $output2.=
                  '<div class="despre">
                  <p>'.$row31['wut'].'</p>
-                 <p>'.ucfirst(strtolower($row31['description'])).'</p>
+                 <p class="lm2">'.ucfirst(strtolower($row31['description'])).'</p>
                </div>
                <button type="button" name="submit22">
-                 Change
+                 Schimba
                </button>
                <button type="button" onclick="desc('.$id.','.$row31['indice'].', 0,'.$co.')" class="pd1 pd2 descopera">
                  Descopera
@@ -70,7 +70,7 @@ $output2=$output2.'
        printf("Connect failed: %s\n", mysqli_error($conn));
        $output2= $output2.'</div><div class="logout">
        <form method="post">
-         <input type="submit" name="submit2255" class="butl" value="Log Out">
+         <input type="submit" name="submit2255" class="butl" value="Deconectare">
           
        
        </form>

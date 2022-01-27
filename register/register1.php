@@ -11,14 +11,14 @@ header("Location: register.php");
     <div class="container" >
         
         <div class="login">
-            <p>REGISTER your account</p>
+            <p>Inregistreaza-te</p>
             <form action="" class="f1" method="post" enctype="multipart/form-data">
             <input type="text" name="email"  placeholder="email" class="tex" required>
-            <input type="text" name="un"     placeholder="lname" class="tex" required>
-            <input type="text" name="un2"     placeholder="fname" class="tex" required>
-            <input type="password" name="pass1"  placeholder="password" class="tex" required>
-            <input type="password"  name="pass2" placeholder="password again" class="tex" required>
-            <input type="file"  name="img"  required>
+            <input type="text" name="un"     placeholder="numele" class="tex" required>
+            <input type="text" name="un2"     placeholder="prenumele" class="tex" required>
+            <input type="password" name="pass1"  placeholder="parola" class="tex" required>
+            <input type="password"  name="pass2" placeholder="parola din nou" class="tex" required>
+            <input type="file" class="tex mic"  name="img"  required>
 
             
            

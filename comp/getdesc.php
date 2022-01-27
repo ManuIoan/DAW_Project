@@ -63,7 +63,11 @@ $sql3 = mysqli_query($conn, "SELECT * from $name ");
     else
     if( $row230['done']==1)
     {
-      $output .= '<div class="tot"><p>It s a match &#10084; &#10084; &#10084; </p></div>';
+      $output .= '<div class="tot sc"><p>Felicitari, s-a format o conexiune! </p></div>
+      <button type="button" onclick="location.reload();>
+        Continua
+      </button>
+      ';
 
       $name_mc= $nameu."m";
       $name_mu=$name."m";
@@ -121,7 +125,7 @@ else
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <div class="despre">
     <p>'.$rowg['wut'].'</p>
-    <p>'.ucfirst(strtolower($rowg['description'])).'</p>
+    <p class="lm">'.ucfirst(strtolower($rowg['description'])).'</p>
   </div>
   
 </div>
